@@ -1,0 +1,585 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Teko:wght@300..700&display=swap');
+
+/* theme color  */
+
+html {
+    scroll-padding-top: 60px;
+    scroll-behavior: smooth;
+    /* Adjust this value based on your header height */
+}
+
+:root {
+    --primary-color: #EF3E78;
+    --secondary-color: #222;
+    --bg-gray: #f5f5f5;
+}
+
+* {
+    font-family: "Teko", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p,
+li,
+strong,
+input,
+textarea,
+label,
+span,
+button {
+    font-family: "Poppins", sans-serif;
+}
+
+form button {
+    font-family: "Teko", serif;
+
+}
+
+/******************* global component styling *************************** */
+
+.heading-1 {
+    font-size: 47px;
+    font-weight: 800;
+    line-height: 58px;
+}
+
+.heading-2 {
+    font-size: 42px;
+    line-height: 42px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.heading-3 {
+    font-size: 28px;
+    line-height: 38px;
+    font-weight: 800;
+}
+
+.heading-4 {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 800;
+
+}
+
+.primary-text {
+    color: var(--primary-color);
+}
+
+.secondary-text {
+    color: var(--secondary-color);
+}
+
+.theme-light-bg {
+    background-color: var(--bg-gray) !important;
+}
+
+.theme-secondary-bg {
+    background-color: var(--secondary-color) !important;
+}
+
+.theme-primary-bg {
+    background-color: var(--primary-color) !important;
+}
+
+.tagline {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.para {
+    font-size: 16px;
+    line-height: 29px;
+}
+
+.lg-para {
+    font-size: 18px;
+    line-height: 32px;
+}
+
+
+.theme-dark-btn {
+    background-color: var(--primary-color);
+    text-decoration: none;
+    box-shadow: 2px 3px 4px #000000ad;
+    padding: 3px 17px;
+    color: #fff;
+    font-size: 26px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    display: inline-block;
+}
+
+.theme-dark-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0.4),
+            rgba(255, 255, 255, 0));
+    transition: all 1.2s ease;
+}
+
+.theme-dark-btn:hover::before {
+    left: 100%;
+}
+
+.theme-dark-btn:hover {
+    background-color: var(--primary-color);
+}
+
+
+.theme-light-btn {
+    border-radius: 50px;
+    background-color: var(--bg-gray);
+    text-decoration: none;
+    padding: 7px 17px;
+    color: var(--primary-color);
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    font-weight: 500;
+}
+
+.section {
+    padding: 60px 0px;
+}
+
+button,
+a {
+    cursor: pointer !important;
+}
+
+.theme-check-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.theme-check-list li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 25px;
+    font-size: 18px;
+}
+
+.theme-check-list li::before {
+    content: "\F270";
+    font-family: "bootstrap-icons";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.corner-effect {
+    position: relative;
+    z-index: 1;
+}
+
+.corner-effect::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    background-color: var(--secondary-color);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+    z-index: -1;
+}
+
+.corner-effect::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background-color: var(--secondary-color);
+    clip-path: polygon(0 100%, 0 0, 100% 100%);
+    z-index: -1;
+}
+
+.styled-img {
+    border-radius: 20px;
+    box-shadow: 1px 2px 2px #000;
+}
+
+
+span.cap {
+    position: relative;
+}
+
+span.cap::before {
+    content: "";
+    left: -31px;
+    width: 65px;
+    height: 65px;
+    top: -24px;
+    background-image: url('../images/cap.webp');
+    background-size: contain;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+
+
+/* ************************** Hero Section Styling ************************* */
+
+.hero-content h1 {
+    font-size: 77px;
+    line-height: 65px;
+    font-weight: 600;
+    margin: 0 !important;
+}
+
+.hero-content h1 .secondary-text {
+    display: block;
+    font-weight: 900;
+    font-size: 60px;
+
+    line-height: 80px;
+}
+
+.hero-content h2 {
+    font-size: 58px;
+    font-weight: 600;
+    line-height: 58px;
+    margin-top: 10px;
+}
+
+/* ********************* operation sec **************** */
+
+.questions p {
+    padding: 16px;
+    margin-bottom: 17px;
+    background-color: #ee3e7833;
+    font-size: 20px;
+    border-radius: 11px;
+    box-shadow: 2px 4px 5px #e13a71;
+    font-weight: 400;
+}
+
+/* ************************** Why Choose styling ******************************** */
+
+section.why-choose li {
+    color: #5c5c5c;
+}
+
+section.why-choose li strong {
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+section.why-choose ul.theme-check-list li::before {
+    font-size: 47px;
+    top: -11px;
+}
+
+section.why-choose ul.theme-check-list li:nth-child(1)::before {
+    content: "\F456";
+}
+
+section.why-choose ul.theme-check-list li:nth-child(2)::before {
+    content: "\F224";
+}
+
+section.why-choose ul.theme-check-list li:nth-child(3)::before {
+    content: "\F270";
+}
+
+section.why-choose ul.theme-check-list li:nth-child(4)::before {
+    content: "\F1C0";
+    /* Example icon code for reporting */
+}
+
+section.why-choose ul.theme-check-list li:nth-child(5)::before {
+    content: "\F200";
+    /* Example icon code for growth insights */
+}
+
+
+section.why-choose ul.theme-check-list li {
+    margin-bottom: 20px;
+    padding-left: 62px;
+}
+
+/* ********************* system info sec *************************  */
+
+.info-card {
+    padding: 20px;
+    background: var(--secondary-color);
+    height: 100%;
+    border-radius: 20px;
+    color: var(--ilght-text);
+    border: 3px solid var(--primary-color);
+    cursor: pointer;
+}
+
+.info-card p {
+    font-weight: 300 !important;
+    margin-top: 15px;
+    color: white;
+    font-size: 18px;
+}
+
+.info-card .info-icon {
+    display: inline-block;
+    padding: 7px;
+    line-height: 0;
+    background: var(--primary-color);
+    width: 68px;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid var(--secondary-color);
+    /* margin-top: -50px; */
+    color: white;
+}
+
+.info-card:hover {
+    background-color: var(--primary-color);
+}
+
+.info-card:hover .info-icon {
+    background-color: var(--secondary-color);
+    border-color: var(--primary-color);
+}
+
+.info-icon i {
+    font-size: 40px !important;
+}
+
+/************************ revie seciont  ***************************/
+
+.testi-sec .review-card p.fw-bold {
+    color: var(--primary-color) !important;
+}
+
+.testi-sec .review-card img {
+    padding: 4px;
+    border: 3px solid var(--primary-color);
+    box-shadow: rgba(0, 0, 0, 0.78) 3px 4px 5px;
+}
+
+.review-card p.mb-2 {
+    padding: 21px;
+    background: #ee3e7833;
+    border-radius: 20px;
+    box-shadow: 2px 4px 5px #e13a71;
+    margin-bottom: 20px !important;
+    min-height: 157px;
+}
+
+/*********************** faq section styling  ************************/
+
+.faq-section .accordion-item {
+    background-color: var(--primary-color);
+}
+
+.faq-section .accordion-item * {
+    color: white;
+}
+
+.faq-section button.accordion-button {
+    background: var(--primary-color);
+    border-bottom: 0px !important;
+    line-height: 1.5rem;
+}
+
+.faq-section .accordion-button:not(.collapsed),
+.faq-section .accordion-button:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.faq-section .accordion-button::after {
+    width: 11px;
+    height: 11px;
+    border-radius: 100%;
+    background-color: var(--secondary-color);
+    background-image: none !important;
+}
+
+.faq-section .accordion-button.collapsed::after {
+    background-color: #fff;
+}
+
+/* ***************** Contact Styling ********************/
+
+.contact-page-sec .contact-info {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    height: 100%;
+}
+
+.contact-page-sec .contact-info-icon {
+    margin-bottom: 15px;
+}
+
+.contact-page-sec .contact-info-item {
+    background: var(--secondary-color);
+    padding: 30px 10px;
+    height: 100% !important;
+    border-radius: 20px;
+    border: 4px solid var(--primary-color);
+}
+
+.contact-page-sec .contact-page-form .col-md-6.col-sm-6.col-xs-12 {
+    padding-left: 0px;
+}
+
+.contact-page-sec .contact-page-form.contact-form input {
+    margin-bottom: 5px;
+}
+
+.contact-page-sec .contact-page-form.contact-form textarea {
+    height: 110px;
+}
+
+.contact-page-sec .contact-page-form.contact-form input[type="submit"] {
+    background: rgb(7, 28, 52);
+    width: 150px;
+    border-color: rgb(7, 28, 52);
+}
+
+.contact-page-sec .contact-info-icon i {
+    font-size: 48px;
+    color: var(--primary-color);
+}
+
+.contact-page-sec .contact-info-text p {
+    margin-bottom: 0px;
+}
+
+.contact-page-sec .contact-info-text h2 {
+    color: rgb(255, 255, 255);
+    font-size: 22px;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact-page-sec .contact-info-text span {
+    color: rgb(229, 229, 229);
+    font-size: 16px;
+    display: inline-block;
+    width: 100%;
+}
+
+.contact-page-sec .contact-page-form input {
+    background: none 0px 0px repeat scroll rgb(249, 249, 249);
+    border: 1px solid rgb(249, 249, 249);
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.contact-page-sec .contact-page-form .message-input {
+    display: inline-block;
+    width: 100%;
+    padding-left: 0px;
+}
+
+.contact-page-sec .single-input-field textarea {
+    background: none 0px 0px repeat scroll rgb(249, 249, 249);
+    border: 1px solid rgb(249, 249, 249);
+    width: 100%;
+    height: 163px;
+    padding: 12px 16px;
+    border-radius: 4px;
+}
+
+.contact-page-sec .single-input-field h4 {
+    color: rgb(70, 70, 70);
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+.contact-page-sec .contact-page-form {
+    display: inline-block;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.contact-page-sec .contact-page-map {
+    margin-top: 36px;
+}
+
+.contact-page-sec .contact-page-form form {
+    padding: 20px 15px 0px;
+}
+
+/* ******************* Footer Section ****************************/
+
+
+.footer-section img {
+    max-width: 100%;
+    height: auto;
+    width: 180px;
+}
+
+.footer-section {
+    background-color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
+    z-index: 9;
+}
+
+.footer-section .footer-top {
+    padding-top: 60px;
+    padding-bottom: 25px;
+}
+
+
+.footer-top .site-logo {
+    margin-bottom: 25px;
+    display: block;
+    max-width: 200px;
+}
+
+
+.footer-section .sm-icons {
+    flex-direction: row;
+}
+
+.footer-section .sm-icons .nav-link {
+    padding-right: 1em;
+}
+
+.footer-section .copy-right-text {
+    color: rgb(255, 255, 255);
+}
+
+.footer-section .copy-right-text a {
+    color: var(--white-font);
+}
+
+.footer-section ul.navbar-nav.sm-icons i {
+    font-size: 30px;
+    color: var(--primary-color) !important;
+}
+
+.footer-bottom {
+    padding: 6px;
+    border-top: 1px solid #d3d3d329;
+}
+
+@media only screen and (max-width: 375px) {}
